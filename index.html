@@ -6,1272 +6,161 @@
 
     <title>Приглашение на свадьбу: Роман и Парвона</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap"
       rel="stylesheet"
     />
-
-    <style>
-      :root {
-        --bg-color: #fcf8ee;
-        --text-color: #4a3b32;
-        --accent-pink: #df7eab;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        font-family: "Caveat", cursive;
-        font-size: 1.5rem;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        text-align: center;
-      }
-
-      h1,
-      h2,
-      h3,
-      .big-text,
-      .names-text,
-      p,
-      span,
-      div,
-      a {
-        font-family: "Caveat", cursive;
-      }
-
-      /* =========================================================
-           ГЛАВНЫЙ ЭКРАН
-        ========================================================= */
-
-      .hero {
-        padding: 0 20px;
-        position: relative;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .top-title {
-        width: 85%;
-        max-width: 500px;
-
-        margin: 0 auto;
-
-        display: block;
-      }
-
-      .kids-photos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        gap: 15px;
-
-        margin-bottom: -25px;
-
-        position: relative;
-        z-index: 1;
-      }
-
-      .kid-photo {
-        max-width: 300px;
-        width: 100%;
-        height: 400px;
-
-        object-fit: cover;
-
-        border-radius: 15px;
-
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      /* =========================================================
-           ИМЕНА
-        ========================================================= */
-
-      .paper-name-container {
-        position: relative;
-
-        width: 95%;
-        max-width: 480px;
-
-        z-index: 2;
-
-        margin: 30px auto 0;
-      }
-
-      .paper-name-container img {
-        width: 100%;
-
-        display: block;
-
-        filter: drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.15));
-      }
-
-      .names-text {
-        position: absolute;
-
-        top: 50%;
-        left: 50%;
-
-        transform: translate(-50%, -50%);
-
-        font-size: 3rem;
-
-        font-weight: 600;
-
-        color: var(--text-color);
-
-        width: 100%;
-
-        letter-spacing: 1px;
-      }
-
-      .names-text span {
-        color: var(--accent-pink);
-
-        font-size: 2.2rem;
-      }
-
-      /* =========================================================
-           ТАЙМЕР
-        ========================================================= */
-
-      .countdown-container {
-        margin: 40px 0 20px;
-
-        display: flex;
-
-        justify-content: center;
-
-        gap: 15px;
-      }
-
-      .time-box {
-        text-align: center;
-      }
-
-      .time-num {
-        font-size: 2.4rem;
-
-        font-weight: 600;
-
-        display: block;
-
-        color: var(--text-color);
-      }
-
-      .time-label {
-        font-size: 1.1rem;
-
-        color: #888;
-
-        text-transform: uppercase;
-      }
-
-      .garland {
-        width: 95%;
-
-        max-width: 500px;
-
-        margin: 10px auto 30px;
-
-        display: block;
-      }
-
-      /* =========================================================
-           БЕЛЫЕ КАРТОЧКИ
-        ========================================================= */
-
-      .card-block {
-        background: #fff;
-
-        border-radius: 20px;
-
-        padding: 40px 20px;
-
-        margin: 30px 20px;
-
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      }
-
-      .big-text {
-        font-size: 3rem;
-
-        color: var(--text-color);
-
-        margin-bottom: 15px;
-
-        letter-spacing: 1px;
-      }
-
-      /* =========================================================
-           РУКИ
-        ========================================================= */
-
-      .hands-img {
-        width: 95%;
-
-        max-width: 1100px;
-
-        margin: 20px auto 40px;
-
-        display: block;
-      }
-
-      /* =========================================================
-           ВЗРОСЛЫЕ
-        ========================================================= */
-
-      .adults-section {
-        padding: 50px 20px;
-
-        background: var(--bg-color);
-      }
-
-      .adult-couple {
-        display: flex;
-
-        justify-content: center;
-
-        gap: 30px;
-
-        align-items: flex-end;
-
-        margin-top: 60px;
-      }
-
-      .person {
-        position: relative;
-
-        width: 45%;
-
-        max-width: 170px;
-      }
-
-      .person-roma {
-        transform: rotate(-3deg);
-      }
-
-      .person-parvona {
-        transform: rotate(3deg);
-      }
-
-      .crown-img {
-        position: absolute;
-
-        top: -65px;
-        left: 50%;
-
-        transform: translateX(-50%);
-
-        width: 85px;
-
-        z-index: 2;
-      }
-
-      .adult-photo {
-        width: 100%;
-
-        border-radius: 12px;
-
-        border: 4px solid #fff;
-
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-
-        background: #fff;
-      }
-
-      .person-name {
-        font-size: 2.5rem;
-
-        margin-top: 15px;
-
-        font-weight: 600;
-      }
-
-      /* =========================================================
-           ЛОКАЦИИ
-        ========================================================= */
-
-      .loc-card {
-        margin-bottom: 50px;
-      }
-
-      .loc-img {
-        width: 200px;
-        height: 200px;
-
-        object-fit: cover;
-
-        border-radius: 50%;
-
-        border: 5px solid #fff;
-
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
-        margin-bottom: 15px;
-      }
-
-      /* =========================================================
-           ПОЖЕЛАНИЯ ПО ПОДАРКАМ
-        ========================================================= */
-
-      .gifts-section {
-        position: relative;
-
-        width: min(94vw, 620px);
-
-        height: 540px;
-
-        margin: 60px auto;
-
-        padding: 95px 35px 100px;
-
-        color: #fff;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        overflow: hidden;
-      }
-
-      .heart-bg-svg {
-        position: absolute;
-
-        top: 0;
-        left: 0;
-
-        width: 100%;
-        height: 100%;
-
-        z-index: -1;
-      }
-
-      .gifts-content {
-        position: relative;
-
-        z-index: 2;
-
-        width: 100%;
-
-        max-width: 400px;
-
-        margin: -5px auto 0;
-
-        text-align: center;
-      }
-
-      .gifts-content h2 {
-        font-size: clamp(1.85rem, 5vw, 2.35rem);
-
-        line-height: 1.02;
-
-        margin: 0 auto 13px;
-
-        color: #fff;
-
-        max-width: 320px;
-      }
-
-      .gifts-content p {
-        font-size: clamp(1.05rem, 3vw, 1.25rem);
-
-        line-height: 1.18;
-
-        margin: 8px auto;
-
-        color: #fff;
-
-        max-width: 350px;
-      }
-
-      .gifts-content p:last-of-type {
-        max-width: 335px;
-      }
-
-      .gifts-18 {
-        margin: 14px auto 0;
-
-        font-weight: 600;
-
-        font-size: clamp(0.98rem, 2.8vw, 1.12rem);
-
-        color: #fff;
-
-        line-height: 1.12;
-
-        max-width: 295px;
-      }
-
-      @media (max-width: 600px) {
-        .gifts-section {
-          width: 96vw;
-
-          height: 455px;
-
-          padding: 60px 22px 80px;
-
-          align-items: flex-start;
-        }
-
-        .gifts-content {
-          max-width: 290px;
-
-          margin: 42px auto 0;
-        }
-
-        .gifts-content h2 {
-          font-size: 1.85rem;
-
-          line-height: 0.98;
-
-          max-width: 250px;
-        }
-
-        .gifts-content p {
-          font-size: 0.99rem;
-
-          line-height: 1.12;
-
-          max-width: 270px;
-        }
-
-        .gifts-18 {
-          max-width: 235px;
-
-          font-size: 0.92rem;
-        }
-      }
-
-      @media (max-width: 400px) {
-        .gifts-section {
-          width: 97vw;
-
-          height: 435px;
-
-          padding: 55px 18px 70px;
-        }
-
-        .gifts-content {
-          max-width: 270px;
-
-          margin-top: 38px;
-        }
-
-        .gifts-content h2 {
-          font-size: 1.7rem;
-
-          max-width: 235px;
-        }
-
-        .gifts-content p {
-          font-size: 0.91rem;
-
-          max-width: 250px;
-        }
-
-        .gifts-18 {
-          max-width: 215px;
-
-          font-size: 0.86rem;
-        }
-      }
-
-      /* =========================================================
-           КАЛЕНДАРЬ
-        ========================================================= */
-
-      .calendar-box {
-        border: 2px solid var(--accent-pink);
-
-        border-radius: 30px;
-
-        padding: 20px;
-
-        max-width: 350px;
-
-        margin: 0 auto;
-
-        background: #fff;
-      }
-
-      .days-grid {
-        display: grid;
-
-        grid-template-columns: repeat(7, 1fr);
-
-        gap: 10px;
-
-        margin-top: 20px;
-      }
-
-      .day-header {
-        color: #888;
-
-        font-size: 1.2rem;
-
-        font-weight: 600;
-      }
-
-      .day {
-        font-size: 1.5rem;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        height: 35px;
-      }
-
-      .wedding-day {
-        position: relative;
-
-        color: transparent;
-      }
-
-      .wedding-day::before {
-        content: "🖤";
-
-        color: #222;
-
-        font-size: 2rem;
-
-        position: absolute;
-
-        top: 50%;
-        left: 50%;
-
-        transform: translate(-50%, -50%);
-
-        animation: heartbeat 1.5s infinite;
-      }
-
-      @keyframes heartbeat {
-        0% {
-          transform: translate(-50%, -50%) scale(1);
-        }
-
-        20% {
-          transform: translate(-50%, -50%) scale(1.2);
-        }
-
-        40% {
-          transform: translate(-50%, -50%) scale(1);
-        }
-
-        60% {
-          transform: translate(-50%, -50%) scale(1.2);
-        }
-
-        80% {
-          transform: translate(-50%, -50%) scale(1);
-        }
-
-        100% {
-          transform: translate(-50%, -50%) scale(1);
-        }
-      }
-
-      /* =========================================================
-           КНОПКА
-        ========================================================= */
-
-      .btn-confirm {
-        background-color: var(--accent-pink);
-
-        color: white;
-
-        padding: 15px 40px;
-
-        border: none;
-
-        border-radius: 30px;
-
-        font-size: 1.6rem;
-
-        font-weight: 600;
-
-        text-transform: uppercase;
-
-        box-shadow: 0 4px 10px rgba(223, 126, 171, 0.4);
-
-        cursor: pointer;
-
-        text-decoration: none;
-
-        display: inline-block;
-
-        margin: 20px 0;
-      }
-
-      /* =========================================================
-           СВАДЕБНОЕ РАСПИСАНИЕ
-        ========================================================= */
-
-      .timeline-card {
-        background: #fff;
-
-        border-radius: 20px;
-
-        padding: 50px 25px 60px;
-
-        margin: 40px 15px;
-
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-
-        overflow: hidden;
-      }
-
-      /*
-            На компьютере расписание использует практически
-            всю ширину карточки.
-        */
-
-      .timeline-container {
-        position: relative;
-
-        width: min(100%, 1450px);
-
-        margin: 45px auto 0;
-
-        padding: 35px 0 55px;
-      }
-
-      /*
-            ПУНКТИР
-
-            SVG занимает ВСЮ высоту расписания.
-            Поэтому начало и конец пути совпадают
-            с началом и концом контейнера.
-        */
-
-      #path-svg {
-        position: absolute;
-
-        top: 0;
-        left: 0;
-
-        width: 100%;
-        height: 100%;
-
-        z-index: 1;
-
-        pointer-events: none;
-
-        overflow: visible;
-      }
-
-      /*
-            СЕРДЕЧКО
-
-            Всегда находится непосредственно
-            на SVG-пути.
-        */
-
-      #scroll-heart {
-        position: absolute;
-
-        width: 34px;
-        height: auto;
-
-        z-index: 20;
-
-        left: 50%;
-        top: 0;
-
-        transform: translate(-50%, -50%);
-
-        display: block;
-
-        pointer-events: none;
-
-        transition: none;
-      }
-
-      /*
-            СТРОКИ РАСПИСАНИЯ
-        */
-
-      .timeline-row {
-        position: relative;
-
-        z-index: 3;
-
-        width: 100%;
-
-        min-height: 180px;
-
-        margin-bottom: 95px;
-
-        display: flex;
-
-        align-items: center;
-      }
-
-      .timeline-row:last-child {
-        margin-bottom: 0;
-      }
-
-      .timeline-half {
-        position: relative;
-
-        width: 50%;
-
-        min-width: 0;
-
-        height: 100%;
-
-        display: flex;
-
-        align-items: center;
-      }
-
-      /*
-            =====================================================
-            ЛЕВАЯ СТОРОНА
-
-            Порядок:
-
-            КАРТИНКА — ТЕКСТ — ПУНКТИР
-            =====================================================
-        */
-
-      .row-left .left-side {
-        justify-content: flex-end;
-
-        text-align: right;
-
-        padding-right: 55px;
-
-        padding-left: 20px;
-      }
-
-      /*
-            Картинка находится ЗНАЧИТЕЛЬНО левее текста.
-        */
-
-      .row-left .timeline-icon-img {
-        position: absolute;
-
-        right: calc(100% - 115px);
-
-        top: 50%;
-
-        transform: translateY(-50%);
-
-        width: 95px;
-
-        height: auto;
-
-        z-index: 4;
-      }
-
-      /*
-            =====================================================
-            ПРАВАЯ СТОРОНА
-
-            Порядок:
-
-            ПУНКТИР — ТЕКСТ — КАРТИНКА
-            =====================================================
-        */
-
-      .row-right .right-side {
-        justify-content: flex-start;
-
-        text-align: left;
-
-        padding-left: 55px;
-
-        padding-right: 20px;
-      }
-
-      /*
-            Картинка находится ЗНАЧИТЕЛЬНО правее текста.
-        */
-
-      .row-right .timeline-icon-img {
-        position: absolute;
-
-        left: calc(100% - 115px);
-
-        top: 50%;
-
-        transform: translateY(-50%);
-
-        width: 95px;
-
-        height: auto;
-
-        z-index: 4;
-      }
-
-      /*
-            ТЕКСТОВЫЙ БЛОК
-
-            Он находится ближе к центральной линии,
-            но имеет безопасный отступ от неё.
-        */
-
-      .time-content {
-        width: min(100%, 470px);
-
-        min-width: 0;
-      }
-
-      .time-content h3 {
-        margin: 0 0 8px;
-
-        font-size: 3.2rem;
-
-        line-height: 1;
-
-        color: var(--accent-pink);
-
-        font-weight: 600;
-      }
-
-      .time-content strong {
-        display: block;
-
-        margin-bottom: 8px;
-
-        font-size: 1.85rem;
-
-        line-height: 1.15;
-      }
-
-      .time-content p {
-        margin: 0;
-
-        font-size: 1.5rem;
-
-        line-height: 1.2;
-
-        color: #555;
-      }
-
-      /* =========================================================
-           ПЛАНШЕТ
-        ========================================================= */
-
-      @media (max-width: 1000px) and (min-width: 601px) {
-        .timeline-card {
-          padding-left: 15px;
-          padding-right: 15px;
-        }
-
-        .timeline-container {
-          width: 98%;
-        }
-
-        .row-left .left-side {
-          padding-right: 40px;
-        }
-
-        .row-right .right-side {
-          padding-left: 40px;
-        }
-
-        .row-left .timeline-icon-img {
-          right: calc(100% - 95px);
-          width: 78px;
-        }
-
-        .row-right .timeline-icon-img {
-          left: calc(100% - 95px);
-          width: 78px;
-        }
-
-        .time-content {
-          width: min(100%, 330px);
-        }
-
-        .time-content h3 {
-          font-size: 2.7rem;
-        }
-
-        .time-content strong {
-          font-size: 1.55rem;
-        }
-
-        .time-content p {
-          font-size: 1.3rem;
-        }
-      }
-
-      /* =========================================================
-           МОБИЛЬНЫЙ ТЕЛЕФОН
-        ========================================================= */
-
-      @media (max-width: 600px) {
-        .timeline-card {
-          margin: 35px 10px;
-
-          padding: 35px 5px 45px;
-
-          border-radius: 20px;
-        }
-
-        .timeline-card > .big-text {
-          font-size: 2.75rem;
-
-          line-height: 1.05;
-
-          max-width: 300px;
-
-          margin: 0 auto;
-        }
-
-        .timeline-container {
-          width: 100%;
-
-          margin-top: 35px;
-
-          padding: 20px 0 35px;
-        }
-
-        /*
-                ВАЖНО:
-
-                На телефоне линия абсолютно прямая.
-
-                Никаких изгибов.
-            */
-
-        .timeline-row {
-          min-height: 175px;
-
-          margin-bottom: 80px;
-        }
-
-        .timeline-half {
-          width: 50%;
-        }
-
-        /*
-                ЛЕВАЯ СТОРОНА:
-
-                КАРТИНКА
-                ↓
-                ТЕКСТ
-                ↓
-                ПУНКТИР
-            */
-
-        .row-left .left-side {
-          justify-content: flex-end;
-
-          padding-right: 25px;
-
-          padding-left: 4px;
-        }
-
-        /*
-                Правая картинка далеко от линии.
-            */
-
-        .row-left .timeline-icon-img {
-          right: calc(100% - 68px);
-
-          width: 60px;
-        }
-
-        /*
-                ПРАВАЯ СТОРОНА:
-
-                ПУНКТИР
-                ↓
-                ТЕКСТ
-                ↓
-                КАРТИНКА
-            */
-
-        .row-right .right-side {
-          justify-content: flex-start;
-
-          padding-left: 25px;
-
-          padding-right: 4px;
-        }
-
-        /*
-                Правая картинка находится
-                за текстом, а не возле линии.
-            */
-
-        .row-right .timeline-icon-img {
-          left: calc(100% - 68px);
-
-          width: 60px;
-        }
-
-        /*
-                Текст ближе к центру,
-                но между ним и пунктиром
-                всегда остаётся небольшой
-                безопасный зазор.
-            */
-
-        .time-content {
-          width: 100%;
-
-          max-width: 145px;
-        }
-
-        .time-content h3 {
-          font-size: 2.2rem;
-
-          line-height: 1;
-
-          margin-bottom: 7px;
-        }
-
-        .time-content strong {
-          font-size: 1.28rem;
-
-          line-height: 1.15;
-
-          margin-bottom: 7px;
-        }
-
-        .time-content p {
-          font-size: 1.08rem;
-
-          line-height: 1.18;
-        }
-
-        #scroll-heart {
-          width: 32px;
-        }
-      }
-
-      /* =========================================================
-           ОЧЕНЬ МАЛЕНЬКИЙ ТЕЛЕФОН
-        ========================================================= */
-
-      @media (max-width: 400px) {
-        .timeline-card {
-          margin-left: 7px;
-
-          margin-right: 7px;
-        }
-
-        .timeline-card > .big-text {
-          font-size: 2.45rem;
-        }
-
-        .timeline-row {
-          min-height: 165px;
-
-          margin-bottom: 72px;
-        }
-
-        .row-left .left-side {
-          padding-right: 22px;
-        }
-
-        .row-right .right-side {
-          padding-left: 22px;
-        }
-
-        .row-left .timeline-icon-img {
-          right: calc(100% - 63px);
-
-          width: 55px;
-        }
-
-        .row-right .timeline-icon-img {
-          left: calc(100% - 63px);
-
-          width: 55px;
-        }
-
-        .time-content {
-          max-width: 132px;
-        }
-
-        .time-content h3 {
-          font-size: 2rem;
-        }
-
-        .time-content strong {
-          font-size: 1.15rem;
-        }
-
-        .time-content p {
-          font-size: 0.98rem;
-
-          line-height: 1.16;
-        }
-
-        #scroll-heart {
-          width: 30px;
-        }
-      }
-
-      /* =========================================================
-           КАРТА
-        ========================================================= */
-
-      .map-container {
-        width: 100%;
-
-        height: 400px;
-
-        margin-top: 40px;
-
-        border-radius: 20px;
-
-        overflow: hidden;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
 
   <body>
-    <!-- =========================================================
-         ГЛАВНЫЙ ЭКРАН
-    ========================================================= -->
-
     <section class="hero">
-      <img src="надпись Мы женимся.png" alt="Мы женимся!" class="top-title" />
+      <img
+        src="assets/img/надпись Мы женимся.png"
+        alt="Мы женимся!"
+        class="top-title animate__animated animate__tada"
+      />
 
       <div class="kids-photos">
-        <img src="Рома в детстве.png" alt="Рома в детстве" class="kid-photo" />
+        <div class="kid-photo animate__animated animate__backInLeft">
+          <img src="assets/img/Рома в детстве.png" alt="Рома в детстве" />
+        </div>
 
-        <img
-          src="парвона маленька.png"
-          alt="Парвона в детстве"
-          class="kid-photo"
-        />
+        <div class="kid-photo animate__animated animate__backInRight">
+          <img src="assets/img/парвона маленька.png" alt="Парвона в детстве" />
+        </div>
       </div>
 
-      <div class="paper-name-container">
-        <img src="Бумага со скотчем для имен.png" alt="Бумага со скотчем" />
+      <div class="paper-name-container animate__animated animate__zoomIn">
+        <img
+          src="assets/img/Бумага со скотчем для имен.png"
+          alt="Бумага со скотчем"
+        />
 
         <div class="names-text">Роман <span>+</span> Парвона</div>
       </div>
     </section>
 
-    <!-- =========================================================
-         ПРИГЛАШЕНИЕ
-    ========================================================= -->
+    <section class="invite">
+      <div class="card-block">
+        <div class="big-text animate__animated animate__backInUp">
+          Дорогой Гость!
+        </div>
 
-    <div class="card-block">
-      <div class="big-text">Дорогой Гость!</div>
+        <p style="font-size: 2.5rem; line-height: 1.4">
+          Мы рады сообщить Вам, что 28.11.2026 состоится самое главное торжество
+          в нашей жизни - день нашей свадьбы!
 
-      <p style="font-size: 1.6rem; line-height: 1.4">
-        Мы рады сообщить Вам, что 28.11.2026 состоится самое главное торжество в
-        нашей жизни - день нашей свадьбы!
+          <br />
 
-        <br />
+          Приглашаем Вас разделить с нами радость этого незабываемого дня.
+        </p>
 
-        Приглашаем Вас разделить с нами радость этого незабываемого дня.
-      </p>
+        <h2
+          style="margin-top: 25px; color: var(--accent-pink); font-size: 3.5rem"
+        >
+          13:00 — Дворец бракосочетания №1
+        </h2>
+      </div>
+      <img
+        src="assets/img/соединенные руки.png"
+        alt="Соединенные руки"
+        class="hands-img"
+      />
 
-      <h2
-        style="margin-top: 25px; color: var(--accent-pink); font-size: 2.6rem"
-      >
-        13:00 — Дворец бракосочетания №1
-      </h2>
-    </div>
+      <div class="countdown-container">
+        <div class="time-box">
+          <span class="time-num" id="weeks"> 00 </span>
 
-    <img src="соединенные руки.png" alt="Соединенные руки" class="hands-img" />
+          <span class="time-label"> недель </span>
+        </div>
 
-    <div class="countdown-container">
-      <div class="time-box">
-        <span class="time-num" id="weeks"> 00 </span>
+        <div class="time-box">
+          <span class="time-num" id="days"> 00 </span>
 
-        <span class="time-label"> недель </span>
+          <span class="time-label"> дней </span>
+        </div>
+
+        <div class="time-box">
+          <span class="time-num" id="hours"> 00 </span>
+
+          <span class="time-label"> часов </span>
+        </div>
+
+        <div class="time-box">
+          <span class="time-num" id="mins"> 00 </span>
+
+          <span class="time-label"> минут </span>
+        </div>
+
+        <div class="time-box">
+          <span class="time-num" id="secs"> 00 </span>
+
+          <span class="time-label"> секунд </span>
+        </div>
       </div>
 
-      <div class="time-box">
-        <span class="time-num" id="days"> 00 </span>
+      <img
+        src="assets/img/гирлянда из флажков 2.png"
+        alt="Гирлянда из флажков"
+        class="garland"
+      />
+    </section>
 
-        <span class="time-label"> дней </span>
-      </div>
-
-      <div class="time-box">
-        <span class="time-num" id="hours"> 00 </span>
-
-        <span class="time-label"> часов </span>
-      </div>
-
-      <div class="time-box">
-        <span class="time-num" id="mins"> 00 </span>
-
-        <span class="time-label"> минут </span>
-      </div>
-
-      <div class="time-box">
-        <span class="time-num" id="secs"> 00 </span>
-
-        <span class="time-label"> секунд </span>
-      </div>
-    </div>
-
-    <img
-      src="гирлянда из флажков 2.png"
-      alt="Гирлянда из флажков"
-      class="garland"
-    />
-
-    <!-- =========================================================
-         ВЗРОСЛЫЕ
-    ========================================================= -->
-
+    <!-- 
     <section class="adults-section">
       <div class="big-text">Там, где посеяна любовь, растёт радость</div>
 
       <div class="adult-couple">
         <div class="person person-roma">
-          <img src="корона романа.png" class="crown-img" alt="Корона Романа" />
+          <img
+            src="assets/img/корона романа.png"
+            class="crown-img"
+            alt="Корона Романа"
+          />
 
-          <img src="рома взрослый.png" alt="Роман" class="adult-photo" />
+          <img
+            src="assets/img/рома взрослый.png"
+            alt="Роман"
+            class="adult-photo"
+          />
 
           <div class="person-name">Роман</div>
         </div>
 
         <div class="person person-parvona">
           <img
-            src="корона для парвоны.png"
+            src="assets/img/корона для парвоны.png"
             class="crown-img"
             alt="Корона Парвоны"
           />
 
-          <img src="парвона взрослая.png" alt="Парвона" class="adult-photo" />
+          <img
+            src="assets/img/парвона взрослая.png"
+            alt="Парвона"
+            class="adult-photo"
+          />
 
           <div class="person-name">Парвона</div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-         ЛОКАЦИЯ
-    ========================================================= -->
-
     <div class="card-block">
       <div class="big-text">Локация</div>
 
       <div class="loc-card">
-        <img src="дворец бракосочетания.jpg" class="loc-img" alt="ЗАГС" />
+        <img
+          src="assets/img/дворец бракосочетания.jpg"
+          class="loc-img"
+          alt="ЗАГС"
+        />
 
         <h3 style="font-size: 2.2rem; margin-bottom: 5px">
           ДВОРЕЦ БРАКОСОЧЕТАНИЯ №1
@@ -1288,7 +177,7 @@
 
       <div class="loc-card" style="margin-top: 60px">
         <img
-          src="Ресторан.webp"
+          src="assets/img/Ресторан.webp"
           class="loc-img"
           style="border-radius: 10px; width: 220px"
           alt="Ресторан"
@@ -1307,10 +196,6 @@
         </p>
       </div>
     </div>
-
-    <!-- =========================================================
-         ПОЖЕЛАНИЯ ПО ПОДАРКАМ
-    ========================================================= -->
 
     <section class="gifts-section">
       <svg
@@ -1357,10 +242,6 @@
         </div>
       </div>
     </section>
-
-    <!-- =========================================================
-         ПОДТВЕРЖДЕНИЕ
-    ========================================================= -->
 
     <div class="card-block">
       <div class="big-text">Подтверждение</div>
@@ -1427,10 +308,6 @@
       </div>
     </div>
 
-    <!-- =========================================================
-         ДРЕСС-КОД
-    ========================================================= -->
-
     <div
       style="
         background-color: #fff;
@@ -1452,10 +329,6 @@
       </p>
     </div>
 
-    <!-- =========================================================
-         ДЕТИ
-    ========================================================= -->
-
     <div
       style="
         margin: 30px auto;
@@ -1465,15 +338,11 @@
       "
     >
       <img
-        src="видео с детьми.gif"
+        src="assets/img/видео с детьми.gif"
         alt="Дети"
         style="width: 100%; height: auto; display: block; border-radius: 15px"
       />
     </div>
-
-    <!-- =========================================================
-         ФИНАЛ
-    ========================================================= -->
 
     <div class="card-block" style="margin-top: 40px">
       <div class="big-text" style="font-size: 3rem">
@@ -1492,20 +361,12 @@
       </a>
     </div>
 
-    <!-- =========================================================
-         СВАДЕБНОЕ РАСПИСАНИЕ
-    ========================================================= -->
-
     <div class="timeline-card">
       <div class="big-text" style="font-size: 3.2rem; margin-bottom: 0">
         Свадебное расписание
       </div>
 
       <div class="timeline-container" id="timeline">
-        <!-- =====================================================
-                 ПУНКТИРНАЯ ЛИНИЯ
-            ===================================================== -->
-
         <svg id="path-svg">
           <path
             id="curve-path"
@@ -1516,19 +377,19 @@
           ></path>
         </svg>
 
-        <!-- =====================================================
-                 СЕРДЦЕ
-            ===================================================== -->
-
-        <img id="scroll-heart" src="Розове сердце.png" alt="Сердце" />
-
-        <!-- =====================================================
-                 13:00
-            ===================================================== -->
+        <img
+          id="scroll-heart"
+          src="assets/img/Розове сердце.png"
+          alt="Сердце"
+        />
 
         <div class="timeline-row row-left">
           <div class="timeline-half left-side">
-            <img src="Кольца.png" class="timeline-icon-img" alt="Кольца" />
+            <img
+              src="assets/img/Кольца.png"
+              class="timeline-icon-img"
+              alt="Кольца"
+            />
 
             <div class="time-content">
               <h3>13:00</h3>
@@ -1545,10 +406,6 @@
           <div class="timeline-half right-side"></div>
         </div>
 
-        <!-- =====================================================
-                 15:00
-            ===================================================== -->
-
         <div class="timeline-row row-right">
           <div class="timeline-half left-side"></div>
 
@@ -1564,17 +421,21 @@
               </p>
             </div>
 
-            <img src="Бокалы.png" class="timeline-icon-img" alt="Бокалы" />
+            <img
+              src="assets/img/Бокалы.png"
+              class="timeline-icon-img"
+              alt="Бокалы"
+            />
           </div>
         </div>
 
-        <!-- =====================================================
-                 16:00
-            ===================================================== -->
-
         <div class="timeline-row row-left">
           <div class="timeline-half left-side">
-            <img src="Блюдо.png" class="timeline-icon-img" alt="Блюдо" />
+            <img
+              src="./assets/img/Блюдо.png"
+              class="timeline-icon-img"
+              alt="Блюдо"
+            />
 
             <div class="time-content">
               <h3>16:00</h3>
@@ -1588,10 +449,6 @@
           <div class="timeline-half right-side"></div>
         </div>
 
-        <!-- =====================================================
-                 00:00
-            ===================================================== -->
-
         <div class="timeline-row row-right">
           <div class="timeline-half left-side"></div>
 
@@ -1604,15 +461,15 @@
               <p>Даже такой день может когда-то подойти к концу</p>
             </div>
 
-            <img src="Фейверк.png" class="timeline-icon-img" alt="Фейерверк" />
+            <img
+              src="./assets/img/Фейверк.png"
+              class="timeline-icon-img"
+              alt="Фейерверк"
+            />
           </div>
         </div>
       </div>
     </div>
-
-    <!-- =========================================================
-         КАРТА
-    ========================================================= -->
 
     <div style="margin: 0 20px">
       <div class="map-container">
@@ -1624,261 +481,8 @@
           allowfullscreen="true"
         ></iframe>
       </div>
-    </div>
+    </div> -->
 
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================= -->
-
-    <script>
-      /* =========================================================
-           ТАЙМЕР
-        ========================================================= */
-
-      const countDownDate = new Date("Nov 28, 2026 13:00:00").getTime();
-
-      setInterval(function () {
-        const now = new Date().getTime();
-
-        const distance = countDownDate - now;
-
-        document.getElementById("weeks").innerHTML = String(
-          Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24 * 7))),
-        ).padStart(2, "0");
-
-        document.getElementById("days").innerHTML = String(
-          Math.max(
-            0,
-            Math.floor(
-              (distance % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24),
-            ),
-          ),
-        ).padStart(2, "0");
-
-        document.getElementById("hours").innerHTML = String(
-          Math.max(
-            0,
-            Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          ),
-        ).padStart(2, "0");
-
-        document.getElementById("mins").innerHTML = String(
-          Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))),
-        ).padStart(2, "0");
-
-        document.getElementById("secs").innerHTML = String(
-          Math.max(0, Math.floor((distance % (1000 * 60)) / 1000)),
-        ).padStart(2, "0");
-      }, 1000);
-
-      /* =========================================================
-           СВАДЕБНОЕ РАСПИСАНИЕ
-        ========================================================= */
-
-      const timeline = document.getElementById("timeline");
-
-      const svgPath = document.getElementById("curve-path");
-
-      const heart = document.getElementById("scroll-heart");
-
-      /* =========================================================
-           ПОСТРОЕНИЕ ПУНКТИРА
-        ========================================================= */
-
-      function drawPath() {
-        const h = timeline.clientHeight;
-
-        const w = timeline.clientWidth;
-
-        const center = w / 2;
-
-        /*
-                НА ТЕЛЕФОНЕ:
-
-                идеально прямая линия.
-            */
-
-        if (window.innerWidth <= 600) {
-          const d = `
-                        M ${center} 0
-                        L ${center} ${h}
-                    `;
-
-          svgPath.setAttribute("d", d);
-
-          return;
-        }
-
-        /*
-                НА КОМПЬЮТЕРЕ:
-
-                большая плавная змейка.
-
-                Амплитуда увеличена,
-                чтобы пунктир действительно
-                использовал ширину композиции.
-            */
-
-        const amplitude = Math.min(w * 0.2, 220);
-
-        const d = `
-                    M ${center} 0
-
-                    C
-                    ${center + amplitude} ${h * 0.1},
-                    ${center + amplitude} ${h * 0.2},
-                    ${center} ${h * 0.28}
-
-                    C
-                    ${center - amplitude} ${h * 0.36},
-                    ${center - amplitude} ${h * 0.46},
-                    ${center} ${h * 0.54}
-
-                    C
-                    ${center + amplitude} ${h * 0.62},
-                    ${center + amplitude} ${h * 0.72},
-                    ${center} ${h * 0.8}
-
-                    C
-                    ${center - amplitude * 0.75} ${h * 0.87},
-                    ${center - amplitude * 0.55} ${h * 0.94},
-                    ${center} ${h}
-                `;
-
-        svgPath.setAttribute("d", d);
-      }
-
-      /* =========================================================
-           ПОЗИЦИЯ СЕРДЕЧКА
-        ========================================================= */
-
-      function placeHeartAtProgress(progress) {
-        const pathLength = svgPath.getTotalLength();
-
-        if (!pathLength) {
-          return;
-        }
-
-        /*
-                ЗДЕСЬ НЕТ НИКАКОГО 0.96.
-
-                0 = абсолютное начало линии.
-
-                1 = абсолютный конец линии.
-
-                Именно этого ты хотела.
-            */
-
-        const point = svgPath.getPointAtLength(progress * pathLength);
-
-        heart.style.left = point.x + "px";
-
-        heart.style.top = point.y + "px";
-      }
-
-      /* =========================================================
-           ДВИЖЕНИЕ СЕРДЕЧКА ПО СКРОЛЛУ
-        ========================================================= */
-
-      function updateHeart() {
-        const rect = timeline.getBoundingClientRect();
-
-        /*
-                Начало движения:
-
-                верхняя часть расписания
-                появляется в зоне просмотра.
-            */
-
-        const startPoint = window.innerHeight * 0.85;
-
-        /*
-                Конец движения:
-
-                нижний край расписания
-                доходит до нижней части экрана.
-
-                Здесь progress обязательно
-                достигает 1.
-            */
-
-        const endPoint = -rect.height + window.innerHeight * 0.15;
-
-        const distance = startPoint - endPoint;
-
-        let progress = (startPoint - rect.top) / distance;
-
-        /*
-                Строго ограничиваем диапазон
-                от 0 до 1.
-
-                Никаких 0.96,
-                никаких 0.98.
-            */
-
-        progress = Math.max(0, Math.min(1, progress));
-
-        placeHeartAtProgress(progress);
-      }
-
-      /* =========================================================
-           ОБНОВЛЕНИЕ
-        ========================================================= */
-
-      function refreshTimeline() {
-        drawPath();
-
-        /*
-                После построения SVG
-                сердечко сразу получает
-                правильную точку.
-            */
-
-        updateHeart();
-      }
-
-      /* =========================================================
-           ЗАПУСК
-        ========================================================= */
-
-      window.addEventListener("load", function () {
-        requestAnimationFrame(function () {
-          refreshTimeline();
-        });
-      });
-
-      /*
-            Перестраиваем линию,
-            если изменился размер окна.
-        */
-
-      window.addEventListener("resize", function () {
-        refreshTimeline();
-      });
-
-      /*
-            Движение сердечка
-            при прокрутке.
-        */
-
-      window.addEventListener(
-        "scroll",
-        function () {
-          updateHeart();
-        },
-        {
-          passive: true,
-        },
-      );
-
-      /*
-            Дополнительный пересчёт после
-            загрузки изображений и шрифтов.
-        */
-
-      setTimeout(refreshTimeline, 500);
-
-      setTimeout(refreshTimeline, 1200);
-    </script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
