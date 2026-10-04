@@ -829,6 +829,12 @@ a {
   transition: all 0.6s;
 }
 
+@media (max-width: 500px) {
+  .btn-confirm {
+    font-size: 1.4rem;
+  }
+}
+
 .btn-confirm:hover,
 .btn-confirm:focus,
 .btn-confirm:active {
@@ -1100,6 +1106,14 @@ a {
 }
 
 @media (max-width: 500px) {
+  .row-left .left-side {
+    padding-left: 0;
+  }
+
+  .row-right .right-side {
+    padding-right: 0;
+  }
+
   .time-content h3 {
     font-size: 3.5rem;
   }
@@ -1128,7 +1142,7 @@ a {
   }
 
   .time-content p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .timeline-container {
