@@ -47,7 +47,6 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .top-title {
@@ -139,6 +138,12 @@ a {
   letter-spacing: 1px;
 }
 
+@media (max-width: 450px) {
+  .names-text {
+    font-size: 2.5rem;
+  }
+}
+
 .names-text span {
   color: var(--accent-pink);
 
@@ -163,14 +168,39 @@ a {
   letter-spacing: 1px;
 }
 
-.hands-img {
+.invite__text {
+  font-size: 2.5rem;
+  line-height: 1.4;
+}
+
+.invite__title {
+  margin-top: 25px;
+  color: var(--accent-pink);
+  font-size: 3.5rem;
+}
+
+@media (max-width: 800px) {
+  .big-text {
+    font-size: 3rem;
+  }
+
+  .invite__text {
+    font-size: 2rem;
+  }
+
+  .invite__title {
+    font-size: 3rem;
+  }
+}
+
+.invite__img {
   width: 95%;
 
-  max-width: 1100px;
-
   margin: 20px auto 40px;
+}
 
-  display: block;
+.invite__img img {
+  width: 100%;
 }
 
 .countdown-container {
@@ -188,7 +218,7 @@ a {
 }
 
 .time-num {
-  font-size: 2.4rem;
+  font-size: 4rem;
 
   font-weight: 600;
 
@@ -197,27 +227,23 @@ a {
   color: var(--text-color);
 }
 
+@media (max-width: 700px) {
+  .time-num {
+    font-size: 3rem;
+  }
+}
+
 .time-label {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 
   color: #888;
 
   text-transform: uppercase;
 }
 
-.garland {
-  width: 95%;
-
-  max-width: 500px;
-
-  margin: 10px auto 30px;
-
-  display: block;
+.invite__garland img {
+  width: 100%;
 }
-
-/* =========================================================
-           ВЗРОСЛЫЕ
-        ========================================================= */
 
 .adults-section {
   padding: 50px 20px;
@@ -242,7 +268,7 @@ a {
 
   width: 45%;
 
-  max-width: 170px;
+  max-width: 400px;
 }
 
 .person-roma {
@@ -261,9 +287,38 @@ a {
 
   transform: translateX(-50%);
 
-  width: 85px;
+  width: 150px;
 
   z-index: 2;
+}
+
+@media (max-width: 700px) {
+  .crown-img {
+    width: 120px;
+  }
+}
+
+@media (max-width: 550px) {
+  .crown-img {
+    width: 100px;
+  }
+}
+
+.crown-parvona {
+  top: -43px;
+  left: 61%;
+}
+
+.crown-roman {
+  top: -20px;
+  left: 59%;
+}
+
+@media (max-width: 550px) {
+  .crown-roman {
+    width: 80px;
+    top: -15px;
+  }
 }
 
 .adult-photo {
@@ -279,207 +334,377 @@ a {
 }
 
 .person-name {
-  font-size: 2.5rem;
+  font-size: 4.5rem;
 
   margin-top: 15px;
 
   font-weight: 600;
 }
 
-/* =========================================================
-           ЛОКАЦИИ
-        ========================================================= */
+@media (max-width: 700px) {
+  .person-name {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .person-name {
+    font-size: 2.5rem;
+  }
+}
+
+.location .big-text {
+  margin-bottom: 0px;
+}
 
 .loc-card {
   margin-bottom: 50px;
 }
 
 .loc-img {
-  width: 200px;
-  height: 200px;
-
-  object-fit: cover;
-
+  max-width: 900px;
+  width: 100%;
   border-radius: 50%;
-
-  border: 5px solid #fff;
-
+  border: 5px solid #f7f3e9;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
   margin-bottom: 15px;
 }
 
-/* =========================================================
-           ПОЖЕЛАНИЯ ПО ПОДАРКАМ
-        ========================================================= */
+.loc-img img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.location__title {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.location__subtitle {
+  font-size: 2rem;
+  margin: 0;
+}
+
+@media (max-width: 500px) {
+  .location__title {
+    font-size: 2rem;
+  }
+
+  .location__subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .location__title,
+  .location__subtitle {
+    font-size: 1.5rem;
+  }
+}
 
 .gifts-section {
   position: relative;
 
+  /*
+    Сама секция никогда не становится шире viewport.
+  */
   width: min(94vw, 620px);
 
-  height: 540px;
+  /*
+    Высота определяется контентом.
+    На десктопе сохраняем примерно исходную высоту.
+  */
+  min-height: 1000px;
 
-  margin: 60px auto;
-
-  padding: 95px 35px 100px;
-
-  color: #fff;
+  margin: 60px auto 0;
 
   display: flex;
-
-  align-items: center;
-
   justify-content: center;
+  color: #fff;
 
-  overflow: hidden;
+  /*
+    ВАЖНО:
+    сердце может выходить за пределы самой секции,
+    но не должно создавать горизонтальный scroll страницы.
+  */
+  overflow: visible;
 }
+
+/* =========================================
+   HEART
+   ========================================= */
 
 .heart-bg-svg {
   position: absolute;
 
-  top: 0;
-  left: 0;
+  /*
+    Десктоп:
+    620px × 160% = примерно 992px.
 
-  width: 100%;
-  height: 100%;
+    Но самое главное — ограничиваем ширину viewport.
+    Поэтому SVG никогда не сможет создать
+    горизонтальный overflow страницы.
+  */
+  width: min(170%, calc(100vw - 24px));
+  height: auto;
+
+  /*
+    Сердце начинается сверху секции.
+    Никакого translateY(-50%).
+  */
+  top: 0;
+  left: 50%;
 
   z-index: -1;
+
+  transform: translateX(-50%);
+  transform-origin: center top;
+
+  animation: heartscale 1.2s ease-in-out infinite alternate;
 }
+
+@keyframes heartscale {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+
+  100% {
+    transform: translateX(-50%) scale(1.04);
+  }
+}
+
+/* =========================================
+   CONTENT
+   ========================================= */
 
 .gifts-content {
   position: relative;
-
   z-index: 2;
 
   width: 100%;
+  max-width: 440px;
 
-  max-width: 400px;
+  margin-inline: auto;
 
-  margin: -5px auto 0;
+  /*
+    На десктопе оставляем исходное положение текста.
+  */
+  padding-top: 250px;
 
   text-align: center;
 }
 
-.gifts-content h2 {
-  font-size: clamp(1.85rem, 5vw, 2.35rem);
+/* =========================================
+   TITLE
+   ========================================= */
 
+.gifts__title {
+  width: min(100%, 320px);
+
+  margin: 0 auto 25px;
+
+  font-size: 3rem;
   line-height: 1.02;
 
-  margin: 0 auto 13px;
-
   color: #fff;
-
-  max-width: 320px;
 }
 
-.gifts-content p {
-  font-size: clamp(1.05rem, 3vw, 1.25rem);
+/* =========================================
+   TEXT
+   ========================================= */
 
+.gifts__text {
+  margin: 12px auto;
+
+  font-size: 2rem;
   line-height: 1.18;
 
-  margin: 8px auto;
-
   color: #fff;
-
-  max-width: 350px;
 }
 
-.gifts-content p:last-of-type {
-  max-width: 335px;
+.gifts__text span {
+  position: relative;
 }
+
+.gifts__text span::after {
+  position: absolute;
+
+  left: 0;
+  bottom: -5px;
+
+  content: "";
+
+  width: 100%;
+  height: 3px;
+
+  background-color: #fff;
+}
+
+/* =========================================
+   18+
+   ========================================= */
 
 .gifts-18 {
-  margin: 14px auto 0;
+  margin-top: 40px;
 
   font-weight: 600;
-
-  font-size: clamp(0.98rem, 2.8vw, 1.12rem);
-
-  color: #fff;
-
+  font-size: 2rem;
   line-height: 1.12;
 
-  max-width: 295px;
+  color: #fff;
+}
+
+.gifts-18 span {
+  font-size: 2.7rem;
+  color: #ff4d4d;
+}
+
+/* =========================================
+   ADAPTIVE
+   ========================================= */
+
+@media (max-width: 1000px) {
+  .gifts__title {
+    margin-bottom: 20px;
+  }
+
+  .gifts-content {
+    max-width: 800px;
+    padding-top: 220px;
+    margin-inline: 0;
+  }
+
+  .gifts-18 {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .gifts-section {
+    min-height: 900px;
+  }
+
+  .gifts-content {
+    padding-top: 0;
+  }
+
+  .gifts__title {
+    margin-bottom: 100px;
+    color: var(--text-color);
+  }
+
+  .heart-bg-svg {
+    top: 6%;
+  }
+}
+
+@media (max-width: 700px) {
+  .gifts-section {
+    min-height: 0;
+  }
+
+  .gifts__text {
+    max-width: 300px;
+    margin-top: 20px;
+    font-size: 1.7rem;
+  }
+
+  .gifts-18 {
+    color: var(--text-color);
+    margin-top: 180px;
+  }
+}
+
+@media (max-width: 650px) {
+  .gifts-18 {
+    margin-top: 140px;
+  }
 }
 
 @media (max-width: 600px) {
-  .gifts-section {
-    width: 96vw;
-
-    height: 455px;
-
-    padding: 60px 22px 80px;
-
-    align-items: flex-start;
+  .gifts__title {
+    font-size: 2.5rem;
   }
 
-  .gifts-content {
-    max-width: 290px;
-
-    margin: 42px auto 0;
+  .heart-bg-svg {
+    top: 8%;
   }
 
-  .gifts-content h2 {
-    font-size: 1.85rem;
-
-    line-height: 0.98;
-
-    max-width: 250px;
-  }
-
-  .gifts-content p {
-    font-size: 0.99rem;
-
-    line-height: 1.12;
-
-    max-width: 270px;
-  }
-
-  .gifts-18 {
-    max-width: 235px;
-
-    font-size: 0.92rem;
+  .gifts__text {
+    font-size: 1.5rem;
   }
 }
 
-@media (max-width: 400px) {
-  .gifts-section {
-    width: 97vw;
-
-    height: 435px;
-
-    padding: 55px 18px 70px;
+@media (max-width: 500px) {
+  .heart-bg-svg {
+    top: 12%;
   }
 
-  .gifts-content {
-    max-width: 270px;
-
-    margin-top: 38px;
-  }
-
-  .gifts-content h2 {
+  .gifts-18 {
+    margin-top: 100px;
     font-size: 1.7rem;
-
-    max-width: 235px;
   }
-
-  .gifts-content p {
-    font-size: 0.91rem;
-
-    max-width: 250px;
-  }
-
-  .gifts-18 {
-    max-width: 215px;
-
-    font-size: 0.86rem;
+}
+@media (max-width: 450px) {
+  .gifts__text {
+    font-size: 1.2rem;
   }
 }
 
-/* =========================================================
-           КАЛЕНДАРЬ
-        ========================================================= */
+.submit .big-text,
+.dresscode .big-text,
+.schedule .big-text {
+  font-size: 5rem;
+}
+
+.submit__subtitle,
+.dresscode__subtitle {
+  font-size: 2.5rem;
+}
+
+.dresscode__text {
+  font-size: 2.2rem;
+  color: #666;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .submit .big-text,
+  .dresscode .big-text,
+  .schedule .big-text {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .submit .big-text,
+  .dresscode .big-text,
+  .schedule .big-text {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .submit .big-text,
+  .dresscode .big-text,
+  .schedule .big-text {
+    font-size: 2rem;
+  }
+
+  .submit__subtitle,
+  .dresscode__subtitle {
+    font-size: 1.5rem;
+  }
+
+  .dresscode__text {
+    font-size: 1.8rem;
+  }
+}
+
+.submit .card-block {
+  box-shadow: none;
+}
 
 .calendar-box {
   border: 2px solid var(--accent-pink);
@@ -574,10 +799,6 @@ a {
   }
 }
 
-/* =========================================================
-           КНОПКА
-        ========================================================= */
-
 .btn-confirm {
   background-color: var(--accent-pink);
 
@@ -604,11 +825,15 @@ a {
   display: inline-block;
 
   margin: 20px 0;
+
+  transition: all 0.6s;
 }
 
-/* =========================================================
-           СВАДЕБНОЕ РАСПИСАНИЕ
-        ========================================================= */
+.btn-confirm:hover,
+.btn-confirm:focus,
+.btn-confirm:active {
+  transform: scale(1.2);
+}
 
 .timeline-card {
   background: #fff;
@@ -624,11 +849,6 @@ a {
   overflow: hidden;
 }
 
-/*
-            На компьютере расписание использует практически
-            всю ширину карточки.
-        */
-
 .timeline-container {
   position: relative;
 
@@ -639,13 +859,9 @@ a {
   padding: 35px 0 55px;
 }
 
-/*
-            ПУНКТИР
-
-            SVG занимает ВСЮ высоту расписания.
-            Поэтому начало и конец пути совпадают
-            с началом и концом контейнера.
-        */
+/* =========================================================
+   ПУНКТИРНАЯ ЛИНИЯ
+   ========================================================= */
 
 #path-svg {
   position: absolute;
@@ -663,17 +879,14 @@ a {
   overflow: visible;
 }
 
-/*
-            СЕРДЕЧКО
-
-            Всегда находится непосредственно
-            на SVG-пути.
-        */
+/* =========================================================
+   СЕРДЦЕ НА ЛИНИИ
+   ========================================================= */
 
 #scroll-heart {
   position: absolute;
 
-  width: 34px;
+  width: 70px;
   height: auto;
 
   z-index: 20;
@@ -690,9 +903,9 @@ a {
   transition: none;
 }
 
-/*
-            СТРОКИ РАСПИСАНИЯ
-        */
+/* =========================================================
+   СТРОКА TIMELINE
+   ========================================================= */
 
 .timeline-row {
   position: relative;
@@ -714,106 +927,106 @@ a {
   margin-bottom: 0;
 }
 
-.timeline-half {
-  position: relative;
+/* =========================================================
+   ПОЛОВИНЫ
+   ========================================================= */
 
+.timeline-half {
   width: 50%;
 
   min-width: 0;
-
-  height: 100%;
 
   display: flex;
 
   align-items: center;
 }
 
-/*
-            =====================================================
-            ЛЕВАЯ СТОРОНА
-
-            Порядок:
-
-            КАРТИНКА — ТЕКСТ — ПУНКТИР
-            =====================================================
-        */
+/* =========================================================
+   ЛЕВАЯ СТОРОНА
+   ТЕКСТ ← ПУНКТИР
+   ========================================================= */
 
 .row-left .left-side {
   justify-content: flex-end;
 
-  text-align: right;
-
   padding-right: 55px;
-
   padding-left: 20px;
+
+  text-align: right;
 }
 
-/*
-            Картинка находится ЗНАЧИТЕЛЬНО левее текста.
-        */
-
-.row-left .timeline-icon-img {
-  position: absolute;
-
-  right: calc(100% - 115px);
-
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  width: 95px;
-
-  height: auto;
-
-  z-index: 4;
-}
-
-/*
-            =====================================================
-            ПРАВАЯ СТОРОНА
-
-            Порядок:
-
-            ПУНКТИР — ТЕКСТ — КАРТИНКА
-            =====================================================
-        */
+/* =========================================================
+   ПРАВАЯ СТОРОНА
+   ПУНКТИР → ТЕКСТ
+   ========================================================= */
 
 .row-right .right-side {
   justify-content: flex-start;
 
-  text-align: left;
-
   padding-left: 55px;
-
   padding-right: 20px;
+
+  text-align: left;
 }
 
+/* =========================================================
+   ДЕКОРАТИВНЫЕ ИКОНКИ
+   ========================================================= */
+
 /*
-            Картинка находится ЗНАЧИТЕЛЬНО правее текста.
-        */
+   Меняешь только это значение,
+   чтобы увеличить / уменьшить ВСЕ иконки.
 
-.row-right .timeline-icon-img {
+   Было у тебя 95px.
+   Сейчас ставим 150px.
+*/
+
+.timeline-container {
+  --timeline-icon-size: 250px;
+
+  /*
+    Расстояние между центральным пунктиром
+    и ближайшим краем иконки.
+  */
+  --timeline-icon-gap: 250px;
+}
+
+.timeline-icon-img {
   position: absolute;
-
-  left: calc(100% - 115px);
 
   top: 50%;
 
-  transform: translateY(-50%);
-
-  width: 95px;
-
+  width: var(--timeline-icon-size);
   height: auto;
 
+  transform: translateY(-50%);
+
   z-index: 4;
+
+  pointer-events: none;
+
+  display: block;
 }
 
 /*
-            ТЕКСТОВЫЙ БЛОК
+   Текст слева → иконка справа
+*/
 
-            Он находится ближе к центральной линии,
-            но имеет безопасный отступ от неё.
-        */
+.row-left .timeline-icon-img {
+  left: calc(50% + var(--timeline-icon-gap));
+}
+
+/*
+   Текст справа → иконка слева
+*/
+
+.row-right .timeline-icon-img {
+  right: calc(50% + var(--timeline-icon-gap));
+}
+
+/* =========================================================
+   ТЕКСТОВЫЙ БЛОК
+   ========================================================= */
 
 .time-content {
   width: min(100%, 470px);
@@ -824,7 +1037,7 @@ a {
 .time-content h3 {
   margin: 0 0 8px;
 
-  font-size: 3.2rem;
+  font-size: 5rem;
 
   line-height: 1;
 
@@ -838,7 +1051,7 @@ a {
 
   margin-bottom: 8px;
 
-  font-size: 1.85rem;
+  font-size: 2.5rem;
 
   line-height: 1.15;
 }
@@ -846,282 +1059,92 @@ a {
 .time-content p {
   margin: 0;
 
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 
   line-height: 1.2;
 
   color: #555;
 }
 
-/* =========================================================
-           ПЛАНШЕТ
-        ========================================================= */
-
-@media (max-width: 1000px) and (min-width: 601px) {
-  .timeline-card {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
+@media (max-width: 1000px) {
   .timeline-container {
-    width: 98%;
-  }
-
-  .row-left .left-side {
-    padding-right: 40px;
-  }
-
-  .row-right .right-side {
-    padding-left: 40px;
-  }
-
-  .row-left .timeline-icon-img {
-    right: calc(100% - 95px);
-    width: 78px;
-  }
-
-  .row-right .timeline-icon-img {
-    left: calc(100% - 95px);
-    width: 78px;
-  }
-
-  .time-content {
-    width: min(100%, 330px);
-  }
-
-  .time-content h3 {
-    font-size: 2.7rem;
-  }
-
-  .time-content strong {
-    font-size: 1.55rem;
-  }
-
-  .time-content p {
-    font-size: 1.3rem;
+    --timeline-icon-size: 200px;
+    --timeline-icon-gap: 200px;
   }
 }
 
-/* =========================================================
-           МОБИЛЬНЫЙ ТЕЛЕФОН
-        ========================================================= */
+@media (max-width: 800px) {
+  .timeline-container {
+    --timeline-icon-size: 150px;
+    --timeline-icon-gap: 150px;
+  }
+}
 
 @media (max-width: 600px) {
-  .timeline-card {
-    margin: 35px 10px;
-
-    padding: 35px 5px 45px;
-
-    border-radius: 20px;
-  }
-
-  .timeline-card > .big-text {
-    font-size: 2.75rem;
-
-    line-height: 1.05;
-
-    max-width: 300px;
-
-    margin: 0 auto;
-  }
-
-  .timeline-container {
-    width: 100%;
-
-    margin-top: 35px;
-
-    padding: 20px 0 35px;
-  }
-
-  /*
-                ВАЖНО:
-
-                На телефоне линия абсолютно прямая.
-
-                Никаких изгибов.
-            */
-
-  .timeline-row {
-    min-height: 175px;
-
-    margin-bottom: 80px;
-  }
-
-  .timeline-half {
-    width: 50%;
-  }
-
-  /*
-                ЛЕВАЯ СТОРОНА:
-
-                КАРТИНКА
-                ↓
-                ТЕКСТ
-                ↓
-                ПУНКТИР
-            */
-
-  .row-left .left-side {
-    justify-content: flex-end;
-
-    padding-right: 25px;
-
-    padding-left: 4px;
-  }
-
-  /*
-                Правая картинка далеко от линии.
-            */
-
-  .row-left .timeline-icon-img {
-    right: calc(100% - 68px);
-
-    width: 60px;
-  }
-
-  /*
-                ПРАВАЯ СТОРОНА:
-
-                ПУНКТИР
-                ↓
-                ТЕКСТ
-                ↓
-                КАРТИНКА
-            */
-
-  .row-right .right-side {
-    justify-content: flex-start;
-
-    padding-left: 25px;
-
-    padding-right: 4px;
-  }
-
-  /*
-                Правая картинка находится
-                за текстом, а не возле линии.
-            */
-
-  .row-right .timeline-icon-img {
-    left: calc(100% - 68px);
-
-    width: 60px;
-  }
-
-  /*
-                Текст ближе к центру,
-                но между ним и пунктиром
-                всегда остаётся небольшой
-                безопасный зазор.
-            */
-
-  .time-content {
-    width: 100%;
-
-    max-width: 145px;
-  }
-
   .time-content h3 {
-    font-size: 2.2rem;
-
-    line-height: 1;
-
-    margin-bottom: 7px;
+    font-size: 4rem;
   }
 
   .time-content strong {
-    font-size: 1.28rem;
-
-    line-height: 1.15;
-
-    margin-bottom: 7px;
-  }
-
-  .time-content p {
-    font-size: 1.08rem;
-
-    line-height: 1.18;
-  }
-
-  #scroll-heart {
-    width: 32px;
-  }
-}
-
-/* =========================================================
-           ОЧЕНЬ МАЛЕНЬКИЙ ТЕЛЕФОН
-        ========================================================= */
-
-@media (max-width: 400px) {
-  .timeline-card {
-    margin-left: 7px;
-
-    margin-right: 7px;
-  }
-
-  .timeline-card > .big-text {
-    font-size: 2.45rem;
-  }
-
-  .timeline-row {
-    min-height: 165px;
-
-    margin-bottom: 72px;
-  }
-
-  .row-left .left-side {
-    padding-right: 22px;
-  }
-
-  .row-right .right-side {
-    padding-left: 22px;
-  }
-
-  .row-left .timeline-icon-img {
-    right: calc(100% - 63px);
-
-    width: 55px;
-  }
-
-  .row-right .timeline-icon-img {
-    left: calc(100% - 63px);
-
-    width: 55px;
-  }
-
-  .time-content {
-    max-width: 132px;
-  }
-
-  .time-content h3 {
     font-size: 2rem;
   }
 
-  .time-content strong {
-    font-size: 1.15rem;
-  }
-
   .time-content p {
-    font-size: 0.98rem;
-
-    line-height: 1.16;
+    font-size: 1.7rem;
   }
 
-  #scroll-heart {
-    width: 30px;
+  .timeline-container {
+    --timeline-icon-size: 200px;
+    --timeline-icon-gap: 40px;
   }
 }
 
-/* =========================================================
-           КАРТА
-        ========================================================= */
+@media (max-width: 500px) {
+  .time-content h3 {
+    font-size: 3.5rem;
+  }
+
+  .time-content strong {
+    font-size: 1.8rem;
+  }
+
+  .time-content p {
+    font-size: 1.5rem;
+  }
+
+  .timeline-container {
+    --timeline-icon-size: 150px;
+    --timeline-icon-gap: 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .time-content h3 {
+    font-size: 3rem;
+  }
+
+  .time-content strong {
+    font-size: 1.6rem;
+  }
+
+  .time-content p {
+    font-size: 1.2rem;
+  }
+
+  .timeline-container {
+    --timeline-icon-size: 120px;
+    --timeline-icon-gap: 20px;
+  }
+}
+
+.map {
+  padding-block: 20px;
+}
 
 .map-container {
   width: 100%;
 
   height: 400px;
-
-  margin-top: 40px;
 
   border-radius: 20px;
 

@@ -248,11 +248,15 @@ setTimeout(refreshTimeline, 500);
 setTimeout(refreshTimeline, 1200);
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(({ target, isIntersecting }) => {
-    if (!isIntersecting) return;
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
 
-    target.classList.add("animate__animated");
-    observer.unobserve(target);
+    const element = entry.target;
+    const animation = element.dataset.animation;
+
+    element.classList.add("animate__animated", animation);
+
+    observer.unobserve(element);
   });
 });
 

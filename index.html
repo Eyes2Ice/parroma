@@ -37,7 +37,10 @@
         </div>
       </div>
 
-      <div class="paper-name-container animate__animated animate__zoomIn">
+      <div
+        class="paper-name-container animate-on-scroll"
+        data-animation="animate__slideInUp"
+      >
         <img
           src="assets/img/Бумага со скотчем для имен.png"
           alt="Бумага со скотчем"
@@ -49,11 +52,17 @@
 
     <section class="invite">
       <div class="card-block">
-        <div class="big-text animate__animated animate__backInUp">
+        <div
+          class="big-text animate-on-scroll"
+          data-animation="animate__backInDown"
+        >
           Дорогой Гость!
         </div>
 
-        <p style="font-size: 2.5rem; line-height: 1.4">
+        <p
+          class="invite__text animate-on-scroll"
+          data-animation="animate__zoomIn"
+        >
           Мы рады сообщить Вам, что 28.11.2026 состоится самое главное торжество
           в нашей жизни - день нашей свадьбы!
 
@@ -63,16 +72,19 @@
         </p>
 
         <h2
-          style="margin-top: 25px; color: var(--accent-pink); font-size: 3.5rem"
+          class="invite__title animate-on-scroll"
+          data-animation="animate__backInUp"
         >
           13:00 — Дворец бракосочетания №1
         </h2>
       </div>
-      <img
-        src="assets/img/соединенные руки.png"
-        alt="Соединенные руки"
-        class="hands-img"
-      />
+      <div class="invite__img">
+        <img
+          src="assets/img/соединенные руки.png"
+          alt="Соединенные руки"
+          class="hands-img animate-on-scroll animate__backInUp"
+        />
+      </div>
 
       <div class="countdown-container">
         <div class="time-box">
@@ -106,22 +118,28 @@
         </div>
       </div>
 
-      <img
-        src="assets/img/гирлянда из флажков 2.png"
-        alt="Гирлянда из флажков"
-        class="garland"
-      />
+      <div class="invite__garland">
+        <img
+          src="assets/img/гирлянда из флажков 2.png"
+          alt="Гирлянда из флажков"
+          class="garland"
+        />
+      </div>
     </section>
 
-    <!-- 
     <section class="adults-section">
-      <div class="big-text">Там, где посеяна любовь, растёт радость</div>
+      <div class="big-text animate-on-scroll" data-animation="animate__fadeIn">
+        Там, где посеяна любовь, растёт радость
+      </div>
 
       <div class="adult-couple">
-        <div class="person person-roma">
+        <div
+          class="person person-roma animate-on-scroll"
+          data-animation="animate__backInLeft"
+        >
           <img
             src="assets/img/корона романа.png"
-            class="crown-img"
+            class="crown-img crown-roman"
             alt="Корона Романа"
           />
 
@@ -134,10 +152,13 @@
           <div class="person-name">Роман</div>
         </div>
 
-        <div class="person person-parvona">
+        <div
+          class="person person-parvona animate-on-scroll"
+          data-animation="animate__backInRight"
+        >
           <img
             src="assets/img/корона для парвоны.png"
-            class="crown-img"
+            class="crown-img crown-parvona"
             alt="Корона Парвоны"
           />
 
@@ -152,336 +173,397 @@
       </div>
     </section>
 
-    <div class="card-block">
-      <div class="big-text">Локация</div>
+    <section class="location">
+      <div class="card-block">
+        <div
+          class="big-text animate-on-scroll"
+          data-animation="animate__bounceInDown"
+        >
+          Локация
+        </div>
 
-      <div class="loc-card">
-        <img
-          src="assets/img/дворец бракосочетания.jpg"
-          class="loc-img"
-          alt="ЗАГС"
-        />
+        <div class="loc-card">
+          <img
+            src="assets/img/дворец бракосочетания.jpg"
+            class="loc-img animate-on-scroll"
+            data-animation="animate__fadeIn"
+            alt="ЗАГС"
+          />
 
-        <h3 style="font-size: 2.2rem; margin-bottom: 5px">
-          ДВОРЕЦ БРАКОСОЧЕТАНИЯ №1
-        </h3>
+          <h3 class="location__title">ДВОРЕЦ БРАКОСОЧЕТАНИЯ №1</h3>
 
-        <p style="font-size: 1.4rem">
-          Адрес:
+          <p class="location__subtitle">
+            Адрес:
 
-          <br />
+            <br />
 
-          Малый Харитоньевский пер., д.10
-        </p>
+            Малый Харитоньевский пер., д.10
+          </p>
+        </div>
+
+        <div class="loc-card" style="margin-top: 60px">
+          <img
+            src="assets/img/Ресторан.webp"
+            class="loc-img animate-on-scroll"
+            data-animation="animate__fadeIn"
+            alt="Ресторан"
+            style="border-radius: 10px"
+          />
+
+          <h3 class="location__title">Ресторан "РАССОЛЬНИКОВ"</h3>
+
+          <p class="location__subtitle">
+            Адрес:
+
+            <br />
+
+            Просп. Мира, 68, стр. 1А
+          </p>
+        </div>
       </div>
-
-      <div class="loc-card" style="margin-top: 60px">
-        <img
-          src="assets/img/Ресторан.webp"
-          class="loc-img"
-          style="border-radius: 10px; width: 220px"
-          alt="Ресторан"
-        />
-
-        <h3 style="font-size: 2.2rem; margin-bottom: 5px">
-          Ресторан "РАССОЛЬНИКОВ"
-        </h3>
-
-        <p style="font-size: 1.4rem">
-          Адрес:
-
-          <br />
-
-          Просп. Мира, 68, стр. 1А
-        </p>
-      </div>
-    </div>
+    </section>
 
     <section class="gifts-section">
-      <svg
-        class="heart-bg-svg"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
+      <svg class="heart-bg-svg" viewBox="0 0 100 100">
         <path
-          d="
-                    M50,94
-                    C43,90 8,68 4,43
-                    C1,22 15,7 33,8
-                    C43,8 48,14 50,24
-                    C52,14 57,8 67,8
-                    C85,7 99,22 96,43
-                    C92,68 57,90 50,94
-                    Z
-                "
+          d="M50,94 C43,90 8,68 4,43 C1,22 15,7 33,8 C43,8 48,14 50,24 C52,14 57,8 67,8 C85,7 99,22 96,43 C92,68 57,90 50,94 Z"
           fill="#df7eab"
-        ></path>
+        />
       </svg>
 
       <div class="gifts-content">
-        <h2>ПОЖЕЛАНИЯ ПО ПОДАРКАМ</h2>
-
-        <p>
-          Ваше присутствие в день нашей свадьбы — самый значимый подарок для
-          нас!
+        <h2 class="gifts__title">ПОЖЕЛАНИЯ ПО ПОДАРКАМ</h2>
+        <p class="gifts__text">
+          <span>Ваше присутствие</span> в день нашей свадьбы — самый значимый
+          подарок для нас!
         </p>
-
-        <p>
-          Мы понимаем, что дарить цветы на свадьбу — это традиция, но мы не
-          сможем насладиться их красотой в полной мере... Будем рады любой
-          другой альтернативе.
+        <p class="gifts__text">
+          Мы понимаем, что дарить <span>цветы</span> на свадьбу — это традиция,
+          но мы не сможем насладиться их красотой в полной мере... Будем рады
+          любой другой <span>альтернативе</span>.
         </p>
-
         <div class="gifts-18">
-          Формат торжества: 18+
-
+          Формат торжества: <span>18+</span>
           <br />
-
           Мы очень любим детей, но в этот вечер хотим позволить взрослым
           отдохнуть.
         </div>
       </div>
     </section>
 
-    <div class="card-block">
-      <div class="big-text">Подтверждение</div>
-
-      <p style="font-size: 1.6rem">Пожалуйста, подтвердите свое присутствие</p>
-
-      <div class="calendar-box">
-        <h2 style="font-size: 2.6rem; margin: 0; text-transform: uppercase">
-          Ноябрь
-        </h2>
-
-        <div class="days-grid">
-          <div class="day-header">ПН</div>
-          <div class="day-header">ВТ</div>
-          <div class="day-header">СР</div>
-          <div class="day-header">ЧТ</div>
-          <div class="day-header">ПТ</div>
-          <div class="day-header">СБ</div>
-          <div class="day-header">ВС</div>
-
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-
-          <div class="day">1</div>
-          <div class="day">2</div>
-          <div class="day">3</div>
-          <div class="day">4</div>
-          <div class="day">5</div>
-          <div class="day">6</div>
-          <div class="day">7</div>
-          <div class="day">8</div>
-
-          <div class="day">9</div>
-          <div class="day">10</div>
-          <div class="day">11</div>
-          <div class="day">12</div>
-          <div class="day">13</div>
-          <div class="day">14</div>
-          <div class="day">15</div>
-
-          <div class="day">16</div>
-          <div class="day">17</div>
-          <div class="day">18</div>
-          <div class="day">19</div>
-          <div class="day">20</div>
-          <div class="day">21</div>
-          <div class="day">22</div>
-
-          <div class="day">23</div>
-          <div class="day">24</div>
-          <div class="day">25</div>
-          <div class="day">26</div>
-          <div class="day">27</div>
-
-          <div class="day wedding-day">28</div>
-
-          <div class="day">29</div>
-          <div class="day">30</div>
+    <section class="submit">
+      <div class="card-block">
+        <div
+          class="big-text animate-on-scroll"
+          data-animation="animate__backInDown"
+        >
+          Подтверждение
         </div>
-      </div>
-    </div>
 
-    <div
-      style="
-        background-color: #fff;
-        border-radius: 20px;
-        padding: 40px 20px;
-        margin: 30px 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      "
-    >
-      <div class="big-text">Дресс-код</div>
+        <p
+          class="submit__subtitle animate-on-scroll"
+          data-animation="animate__fadeIn"
+        >
+          Пожалуйста, подтвердите свое присутствие
+        </p>
 
-      <p style="font-size: 1.6rem">Мы будем рады видеть вас в любых нарядах!</p>
+        <div
+          class="calendar-box animate-on-scroll"
+          data-animation="animate__fadeIn"
+        >
+          <h2 style="font-size: 2.6rem; margin: 0; text-transform: uppercase">
+            Ноябрь
+          </h2>
 
-      <p
-        style="font-size: 1.4rem; color: #666; max-width: 500px; margin: 0 auto"
-      >
-        Единственное пожелание, пожалуйста, не используйте белый, молочный и
-        бежевый цвета — в этот день это маленькая привилегия невесты.
-      </p>
-    </div>
+          <div class="days-grid">
+            <div class="day-header">ПН</div>
+            <div class="day-header">ВТ</div>
+            <div class="day-header">СР</div>
+            <div class="day-header">ЧТ</div>
+            <div class="day-header">ПТ</div>
+            <div class="day-header">СБ</div>
+            <div class="day-header">ВС</div>
 
-    <div
-      style="
-        margin: 30px auto;
-        width: 90%;
-        max-width: 500px;
-        text-align: center;
-      "
-    >
-      <img
-        src="assets/img/видео с детьми.gif"
-        alt="Дети"
-        style="width: 100%; height: auto; display: block; border-radius: 15px"
-      />
-    </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
 
-    <div class="card-block" style="margin-top: 40px">
-      <div class="big-text" style="font-size: 3rem">
-        Ждем Вас на нашей свадьбе!
-      </div>
+            <div class="day">1</div>
+            <div class="day">2</div>
+            <div class="day">3</div>
+            <div class="day">4</div>
+            <div class="day">5</div>
+            <div class="day">6</div>
+            <div class="day">7</div>
+            <div class="day">8</div>
 
-      <a
-        href="#"
-        onclick="
-          alert('Здесь откроется ваша Google форма!');
-          return false;
-        "
-        class="btn-confirm"
-      >
-        ✓ Подтвердить
-      </a>
-    </div>
+            <div class="day">9</div>
+            <div class="day">10</div>
+            <div class="day">11</div>
+            <div class="day">12</div>
+            <div class="day">13</div>
+            <div class="day">14</div>
+            <div class="day">15</div>
 
-    <div class="timeline-card">
-      <div class="big-text" style="font-size: 3.2rem; margin-bottom: 0">
-        Свадебное расписание
-      </div>
+            <div class="day">16</div>
+            <div class="day">17</div>
+            <div class="day">18</div>
+            <div class="day">19</div>
+            <div class="day">20</div>
+            <div class="day">21</div>
+            <div class="day">22</div>
 
-      <div class="timeline-container" id="timeline">
-        <svg id="path-svg">
-          <path
-            id="curve-path"
-            fill="none"
-            stroke="#df7eab"
-            stroke-width="2"
-            stroke-dasharray="6,6"
-          ></path>
-        </svg>
+            <div class="day">23</div>
+            <div class="day">24</div>
+            <div class="day">25</div>
+            <div class="day">26</div>
+            <div class="day">27</div>
 
-        <img
-          id="scroll-heart"
-          src="assets/img/Розове сердце.png"
-          alt="Сердце"
-        />
+            <div class="day wedding-day">28</div>
 
-        <div class="timeline-row row-left">
-          <div class="timeline-half left-side">
-            <img
-              src="assets/img/Кольца.png"
-              class="timeline-icon-img"
-              alt="Кольца"
-            />
-
-            <div class="time-content">
-              <h3>13:00</h3>
-
-              <strong> Торжественная регистрация </strong>
-
-              <p>
-                Наша регистрация пройдет в залах ЗАГСа, приглашаем всех
-                разделить с нами этот момент
-              </p>
-            </div>
+            <div class="day">29</div>
+            <div class="day">30</div>
+          </div>
+        </div>
+        <div class="card-block" style="margin-top: 40px">
+          <div class="big-text" style="font-size: 3rem">
+            Ждем Вас на нашей свадьбе!
           </div>
 
-          <div class="timeline-half right-side"></div>
+          <a
+            href="#"
+            onclick="
+              alert('Здесь откроется ваша Google форма!');
+              return false;
+            "
+            class="btn-confirm"
+          >
+            ✓ Подтвердить
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dresscode">
+      <div
+        style="
+          background-color: #fff;
+          border-radius: 20px;
+          padding: 40px 20px;
+          margin: 30px 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        "
+      >
+        <div
+          class="big-text animate-on-scroll"
+          data-animation="animate__backInDown"
+        >
+          Дресс-код
         </div>
 
-        <div class="timeline-row row-right">
-          <div class="timeline-half left-side"></div>
+        <p class="dresscode__subtitle">
+          Мы будем рады видеть вас в
+          <span style="text-decoration: underline">любых</span> нарядах!
+        </p>
 
-          <div class="timeline-half right-side">
-            <div class="time-content">
-              <h3>15:00</h3>
+        <p class="dresscode__text">
+          Единственное пожелание, пожалуйста, не используйте
+          <span
+            style="
+              background-color: black;
+              color: #fff;
+              display: inline-block;
+              width: 15%;
+              border-radius: 10px;
+            "
+            >белый</span
+          >,
+          <span
+            style="
+              background-color: black;
+              color: #fdf4e3;
+              display: inline-block;
+              width: 25%;
+              border-radius: 10px;
+            "
+            >молочный</span
+          >
+          и
+          <span
+            style="
+              background-color: black;
+              color: #e9d1af;
+              display: inline-block;
+              width: 25%;
+              border-radius: 10px;
+            "
+            >бежевый</span
+          >
+          цвета — в этот день это маленькая привилегия невесты.
+        </p>
+      </div>
 
-              <strong> Фуршет </strong>
+      <div
+        style="
+          margin: 30px auto;
+          width: 90%;
+          max-width: 500px;
+          text-align: center;
+        "
+      >
+        <img
+          src="assets/img/видео с детьми.gif"
+          alt="Дети"
+          style="width: 100%; height: auto; display: block; border-radius: 15px"
+        />
+      </div>
+    </section>
 
-              <p>
-                Время пролетит незаметно за фуршетом и общением с гостями в
-                ресторане "Рассольников"
-              </p>
+    <section class="schedule">
+      <div class="timeline-card">
+        <div
+          class="big-text animate-on-scroll"
+          style="margin-bottom: 0"
+          data-animation="animate__backInDown"
+        >
+          Свадебное расписание
+        </div>
+
+        <div class="timeline-container" id="timeline">
+          <svg id="path-svg">
+            <path
+              id="curve-path"
+              fill="none"
+              stroke="#df7eab"
+              stroke-width="2"
+              stroke-dasharray="6,6"
+            ></path>
+          </svg>
+
+          <img
+            id="scroll-heart"
+            src="assets/img/Розове сердце.png"
+            alt="Сердце"
+          />
+
+          <div class="timeline-row row-left">
+            <div class="timeline-half left-side">
+              <div
+                class="time-content animate-on-scroll"
+                data-animation="animate__bounceInLeft"
+              >
+                <h3>13:00</h3>
+
+                <strong>Торжественная регистрация</strong>
+
+                <p>
+                  Наша регистрация пройдет в залах ЗАГСа, приглашаем всех
+                  разделить с нами этот момент
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-half right-side"></div>
+
+            <img
+              src="assets/img/Кольца.png"
+              class="timeline-icon-img animate-on-scroll"
+              data-animation="animate__flash"
+              alt="Кольца"
+            />
+          </div>
+
+          <div class="timeline-row row-right">
+            <div class="timeline-half left-side"></div>
+
+            <div class="timeline-half right-side">
+              <div
+                class="time-content animate-on-scroll"
+                data-animation="animate__bounceInRight"
+              >
+                <h3>15:00</h3>
+
+                <strong>Фуршет</strong>
+
+                <p>
+                  Время пролетит незаметно за фуршетом и общением с гостями в
+                  ресторане "Рассольников"
+                </p>
+              </div>
             </div>
 
             <img
               src="assets/img/Бокалы.png"
-              class="timeline-icon-img"
+              class="timeline-icon-img animate-on-scroll"
+              data-animation="animate__flash"
               alt="Бокалы"
             />
           </div>
-        </div>
 
-        <div class="timeline-row row-left">
-          <div class="timeline-half left-side">
+          <div class="timeline-row row-left">
+            <div class="timeline-half left-side">
+              <div
+                class="time-content animate-on-scroll"
+                data-animation="animate__bounceInLeft"
+              >
+                <h3>16:00</h3>
+
+                <strong>Праздничный банкет</strong>
+
+                <p>Здесь пройдет наш праздничный банкет</p>
+              </div>
+            </div>
+
+            <div class="timeline-half right-side"></div>
+
             <img
-              src="./assets/img/Блюдо.png"
-              class="timeline-icon-img"
+              src="assets/img/Блюдо.png"
+              class="timeline-icon-img animate-on-scroll"
+              data-animation="animate__flash"
               alt="Блюдо"
             />
-
-            <div class="time-content">
-              <h3>16:00</h3>
-
-              <strong> Праздничный банкет </strong>
-
-              <p>Здесь пройдет наш праздничный банкет</p>
-            </div>
           </div>
 
-          <div class="timeline-half right-side"></div>
-        </div>
+          <div class="timeline-row row-right">
+            <div class="timeline-half left-side"></div>
 
-        <div class="timeline-row row-right">
-          <div class="timeline-half left-side"></div>
+            <div class="timeline-half right-side">
+              <div
+                class="time-content animate-on-scroll"
+                data-animation="animate__bounceInRight"
+              >
+                <h3>00:00</h3>
 
-          <div class="timeline-half right-side">
-            <div class="time-content">
-              <h3>00:00</h3>
+                <strong>Окончание праздничного дня</strong>
 
-              <strong> Окончание праздничного дня </strong>
-
-              <p>Даже такой день может когда-то подойти к концу</p>
+                <p>Даже такой день может когда-то подойти к концу</p>
+              </div>
             </div>
 
             <img
               src="./assets/img/Фейверк.png"
-              class="timeline-icon-img"
+              class="timeline-icon-img animate-on-scroll"
+              data-animation="animate__flash"
               alt="Фейерверк"
             />
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div style="margin: 0 20px">
+    <section class="map">
       <div class="map-container">
         <iframe
-          src="https://yandex.ru/map-widget/v1/?text=Москва,+проспект+Мира,+68,+стр.+1А&z=15"
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A7716c1271e266602d218ffb40e49de536b3e728fec0a5707c918478d451578f5&amp;source=constructor"
           width="100%"
-          height="400"
+          height="600"
           frameborder="0"
-          allowfullscreen="true"
         ></iframe>
       </div>
-    </div> -->
+    </section>
 
     <script src="./js/main.js"></script>
   </body>
