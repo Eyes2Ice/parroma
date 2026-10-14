@@ -29,11 +29,10 @@
 
       <div class="kids-photos">
         <div class="kid-photo animate__animated animate__backInLeft">
-          <img src="assets/img/Рома в детстве.png" alt="Рома в детстве" />
-        </div>
-
-        <div class="kid-photo animate__animated animate__backInRight">
           <img src="assets/img/парвона маленька.png" alt="Парвона в детстве" />
+        </div>
+        <div class="kid-photo animate__animated animate__backInRight">
+          <img src="assets/img/Рома в детстве.png" alt="Рома в детстве" />
         </div>
       </div>
 
@@ -134,42 +133,26 @@
 
       <div class="adult-couple">
         <div
-          class="person person-roma animate-on-scroll"
-          data-animation="animate__backInLeft"
+          class="adults__img animate-on-scroll"
+          data-animation="animate__fadeIn"
         >
+          <img
+            class="adults__img-picture"
+            src="./assets/img/roman&parvona.png"
+            alt="Совместное фото взрослых Романа и Парвоны"
+          />
           <img
             src="assets/img/корона романа.png"
             class="crown-img crown-roman"
             alt="Корона Романа"
           />
-
-          <img
-            src="assets/img/рома взрослый.png"
-            alt="Роман"
-            class="adult-photo"
-          />
-
-          <div class="person-name">Роман</div>
-        </div>
-
-        <div
-          class="person person-parvona animate-on-scroll"
-          data-animation="animate__backInRight"
-        >
           <img
             src="assets/img/корона для парвоны.png"
             class="crown-img crown-parvona"
             alt="Корона Парвоны"
           />
-
-          <img
-            src="assets/img/парвона взрослая.png"
-            alt="Парвона"
-            class="adult-photo"
-          />
-
-          <div class="person-name">Парвона</div>
         </div>
+        <h2 class="adults__title">Роман и Парвона</h2>
       </div>
     </section>
 
@@ -243,7 +226,7 @@
           любой другой <span>альтернативе</span>.
         </p>
         <div class="gifts-18">
-          Формат торжества: <span>18+</span>
+          <span>Формат торжества:</span> <span>18+</span>
           <br />
           Мы очень любим детей, но в этот вечер хотим позволить взрослым
           отдохнуть.
@@ -334,12 +317,9 @@
           </div>
 
           <a
-            href="#"
-            onclick="
-              alert('Здесь откроется ваша Google форма!');
-              return false;
-            "
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc9Ia3LA5GGHsR9asOPR4v72Gr9NXdWi95d91PPGwIdmPm0PA/viewform?usp=header"
             class="btn-confirm"
+            target="_blank"
           >
             ✓ Подтвердить
           </a>
