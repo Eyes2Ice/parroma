@@ -632,6 +632,10 @@ a {
   .gifts__text {
     font-size: 1.5rem;
   }
+
+  .gifts-content .gifts__text:nth-last-child(1 of .gifts__text) {
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -640,13 +644,18 @@ a {
   }
 
   .gifts-18 {
-    margin-top: 100px;
+    margin-top: 150px;
     font-size: 1.7rem;
   }
-}
-@media (max-width: 450px) {
+
   .gifts__text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .gifts-content .gifts__text {
+    margin-block: 0;
   }
 }
 
